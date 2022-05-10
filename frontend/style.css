@@ -1,0 +1,30 @@
+#menu-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+}
+
+#menu-btn::before, #menu-btn::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  height: 4px;
+  background-color: white;
+}
+
+#menu-btn::before {
+  top: 20px;
+}
+
+#menu-btn::after {
+  top: 36px;
+}
+
+#menu-btn.clicked {
+  background-color: grey;
+}
+/*# sourceMappingURL=style.css.map */
