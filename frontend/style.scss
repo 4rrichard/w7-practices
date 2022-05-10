@@ -1,35 +1,56 @@
-#menu-btn {
-  position: fixed;
-  top: 0;
-  right: 0;
+#root {
+  width: 100%;
+  min-height: 100vh;
 
-  width: 60px;
-  height: 60px;
+  background-color: #ccc;
 
-  background-color: black;
+  #menu-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
 
-  &::before,
-  &::after {
-    content: "";
+    width: 60px;
+    height: 60px;
 
-    position: absolute;
-    right: 10px;
+    background-color: black;
 
-    width: 40px;
-    height: 4px;
+    &::before,
+    &::after {
+      content: "";
 
-    background-color: white;
+      position: absolute;
+      right: 10px;
+
+      width: 40px;
+      height: 4px;
+
+      background-color: white;
+
+      transition: top 500ms, transform 500ms;
+    }
+
+    &::before {
+      top: 20px;
+    }
+
+    &::after {
+      top: 36px;
+    }
   }
+  &.menu-opened {
+    background-color: #fff;
 
-  &::before {
-    top: 20px;
-  }
+    #menu-btn {
+      background-color: #333;
+      &::before {
+        top: 28px;
+        transform: rotate(45deg);
+      }
 
-  &::after {
-    top: 36px;
-  }
-
-  &.clicked {
-    background-color: grey;
+      &::after {
+        top: 28px;
+        transform: rotate(-45deg);
+      }
+    }
   }
 }
